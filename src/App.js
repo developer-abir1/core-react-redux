@@ -10,10 +10,9 @@ function App() {
   return (
     <div>
       <Provider store={store}>
-        <ToastContainer>
-          <RouterProvider router={router} />
-        </ToastContainer>
+        <RouterProvider router={router} />
       </Provider>
+      <ToastContainer autoClose={500} position="bottom-right" />
     </div>
   );
 }
