@@ -8,6 +8,7 @@ import {
   miniusProduct,
   removeProducts,
 } from '../../redux/action/productAction';
+import { toast } from 'react-toastify';
 
 const ProductCart = ({ product }) => {
   const { images, title, description, quantity } = product;
@@ -51,7 +52,12 @@ const ProductCart = ({ product }) => {
             <div className=" flex justify-center items-center w-full">
               <button
                 className="btn btn-primary"
-                onClick={() => dispatch(addToCart(product))}
+                onClick={() =>
+                  dispatch(
+                    addToCart(product),
+                    toast.success('Product Added Successfully')
+                  )
+                }
               >
                 Buy Now
               </button>
